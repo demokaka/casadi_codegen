@@ -82,9 +82,19 @@ end
 
 %% Compile MEX file
 fprintf('\nCOMPILING S-FUNCTION\n');
+% try
+%     % setenv('PATH', [getenv('PATH') ';C:\Ipopt\bin'])
+%     setenv('PATH', [getenv('PATH') ';C:\Ipopt\bin'])
+%     mex -IC:\Ipopt\include C:\Ipopt\lib\ipopt.dll.lib mpc_wrapper.c mpc_solver.c
+%     fprintf('MEX compilation successful\n');
+% catch ME
+%     fprintf('MEX compilation failed: %s\n', ME.message);
+% end
+
 try
-    setenv('PATH', [getenv('PATH') ';C:\Ipopt\bin'])
-    mex -IC:\Ipopt\include C:\Ipopt\lib\ipopt.dll.lib mpc_wrapper.c mpc_solver.c
+    % setenv('PATH', [getenv('PATH') ';C:\Ipopt\bin'])
+    setenv('PATH', [getenv('PATH') ';C:\Users\khanh\dev\matlab\Ipopt\bin'])
+    mex -IC:\Users\khanh\dev\matlab\Ipopt\include C:\Users\khanh\dev\matlab\Ipopt\lib\ipopt.dll.lib mpc_wrapper.c mpc_solver_m1.c
     fprintf('MEX compilation successful\n');
 catch ME
     fprintf('MEX compilation failed: %s\n', ME.message);

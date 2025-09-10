@@ -1,0 +1,79 @@
+%implements s1_b0_y9ban_Start "C"
+
+%function Start(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcSetupRuntimeResourcesFcnOfS1B1 = OpaqueTLCBlockFcn("SetupRuntimeResources", 1, 1, 0, 0, 0)
+%assign tlcSetupRuntimeResourcesFcnOfS1B3 = OpaqueTLCBlockFcn("SetupRuntimeResources", 1, 3, 0, 0, 1)
+%assign tlcSetupRuntimeResourcesFcnOfS1B4 = OpaqueTLCBlockFcn("SetupRuntimeResources", 1, 4, 0, 0, 2)
+%assign tlcSetupRuntimeResourcesFcnOfS1B5 = OpaqueTLCBlockFcn("SetupRuntimeResources", 1, 5, 0, 0, 3)
+%assign tlcSetupRuntimeResourcesFcnOfS1B6 = OpaqueTLCBlockFcn("SetupRuntimeResources", 1, 6, 0, 0, 4)
+%assign tlcSetupRuntimeResourcesFcnOfS1B8 = OpaqueTLCBlockFcn("SetupRuntimeResources", 1, 8, 0, 0, 5)
+%assign tlcSetupRuntimeResourcesFcnOfS1B9 = OpaqueTLCBlockFcn("SetupRuntimeResources", 1, 9, 0, 0, 6)
+%assign tlcSetupRuntimeResourcesFcnOfS1B10 = OpaqueTLCBlockFcn("SetupRuntimeResources", 1, 10, 0, 0, 7)
+%assign tlcSetupRuntimeResourcesFcnOfS1B11 = OpaqueTLCBlockFcn("SetupRuntimeResources", 1, 11, 0, 0, 8)
+%assign tlcSetupRuntimeResourcesFcnOfS1B12 = OpaqueTLCBlockFcn("SetupRuntimeResources", 1, 12, 0, 0, 9)
+%assign tlcStartFcnOfS1B0 = OpaqueTLCBlockFcn("Start", 1, 0, 0, 0, 10)
+%assign tlcStartFcnOfS1B7 = OpaqueTLCBlockFcn("Start", 1, 7, 0, 0, 11)
+%if !WHITE_SPACE(tlcSetupRuntimeResourcesFcnOfS1B1)
+/* SetupRuntimeResources for Scope: '<Root>/Scope53' */
+%<tlcSetupRuntimeResourcesFcnOfS1B1>\
+%endif
+%if !WHITE_SPACE(tlcSetupRuntimeResourcesFcnOfS1B3)
+/* SetupRuntimeResources for Scope: '<Root>/Scope55' */
+%<tlcSetupRuntimeResourcesFcnOfS1B3>\
+%endif
+%if !WHITE_SPACE(tlcSetupRuntimeResourcesFcnOfS1B4)
+/* SetupRuntimeResources for Scope: '<Root>/Scope56' */
+%<tlcSetupRuntimeResourcesFcnOfS1B4>\
+%endif
+%if !WHITE_SPACE(tlcSetupRuntimeResourcesFcnOfS1B5)
+/* SetupRuntimeResources for Scope: '<Root>/Scope57' */
+%<tlcSetupRuntimeResourcesFcnOfS1B5>\
+%endif
+%if !WHITE_SPACE(tlcSetupRuntimeResourcesFcnOfS1B6)
+/* SetupRuntimeResources for Scope: '<Root>/Scope59' */
+%<tlcSetupRuntimeResourcesFcnOfS1B6>\
+%endif
+%if !WHITE_SPACE(tlcSetupRuntimeResourcesFcnOfS1B8)
+/* SetupRuntimeResources for Scope: '<Root>/Scope54' */
+%<tlcSetupRuntimeResourcesFcnOfS1B8>\
+%endif
+%if !WHITE_SPACE(tlcSetupRuntimeResourcesFcnOfS1B9)
+/* SetupRuntimeResources for Scope: '<Root>/Scope58' */
+%<tlcSetupRuntimeResourcesFcnOfS1B9>\
+%endif
+%if !WHITE_SPACE(tlcSetupRuntimeResourcesFcnOfS1B10)
+/* SetupRuntimeResources for Scope: '<Root>/Scope60' */
+%<tlcSetupRuntimeResourcesFcnOfS1B10>\
+%endif
+%if !WHITE_SPACE(tlcSetupRuntimeResourcesFcnOfS1B11)
+/* SetupRuntimeResources for Scope: '<Root>/Scope61' */
+%<tlcSetupRuntimeResourcesFcnOfS1B11>\
+%endif
+%if !WHITE_SPACE(tlcSetupRuntimeResourcesFcnOfS1B12)
+/* SetupRuntimeResources for Scope: '<Root>/Scope62' */
+%<tlcSetupRuntimeResourcesFcnOfS1B12>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS1B0)
+/* Start for S-Function (hil_initialize_block): '<Root>/HIL Initialize4' */
+%<tlcStartFcnOfS1B0>\
+%endif
+/* Start for RateTransition generated from: '<Root>/QUBE-Servo Model3' */
+DC_motor_MPC_B.uV = DC_motor_MPC_P.TmpRTBAtQUBEServoModel3Inport1_;
+%if !WHITE_SPACE(tlcStartFcnOfS1B7)
+/* Start for S-Function (mpc_wrapper): '<Root>/CasADi S-Function2' */
+%<tlcStartFcnOfS1B7>\
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function StartFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Start(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 0, fcnProtoType)>
+%endfunction

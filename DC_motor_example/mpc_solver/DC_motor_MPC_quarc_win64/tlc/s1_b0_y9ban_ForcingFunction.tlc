@@ -1,0 +1,28 @@
+%implements s1_b0_y9ban_ForcingFunction "C"
+
+%function ForcingFunction(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+XDot_DC_motor_MPC_T *_rtXdot;
+%closefile localVarDecl
+_rtXdot = %<(SLibCG_SE(SLibGetContStatesDerivativeStructPtr()))>;
+/* ForcingFunction for Integrator: '<Root>/Integrator2' */
+_rtXdot->Integrator2_CSTATE = DC_motor_MPC_B.omegaradsec;
+/* ForcingFunction for TransferFcn: '<Root>/QUBE-Servo Model3' */
+_rtXdot->QUBEServoModel3_CSTATE = DC_motor_MPC_P.QUBEServoModel3_A * DC_motor_MPC_X.QUBEServoModel3_CSTATE;
+_rtXdot->QUBEServoModel3_CSTATE += DC_motor_MPC_B.uV;
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedForcingFunctionLocalVars", localVarDecl)>
+%endfunction
+%function ForcingFunctionFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void ForcingFunction(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 6, fcnProtoType)>
+%endfunction

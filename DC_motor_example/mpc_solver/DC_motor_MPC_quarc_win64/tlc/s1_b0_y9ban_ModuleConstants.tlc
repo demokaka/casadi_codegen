@@ -1,0 +1,8 @@
+%implements s1_b0_y9ban_ModuleConstants "C"
+
+%function ModuleConstants(block) Output
+
+
+/* Named constants for MATLAB Function: '<Root>/MATLAB Function5' */
+#define DC_motor_MPC_CALL_EVENT (-1)
+%endfunction

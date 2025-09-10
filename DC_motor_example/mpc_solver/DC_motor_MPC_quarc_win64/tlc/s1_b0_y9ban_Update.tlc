@@ -1,0 +1,48 @@
+%implements s1_b0_y9ban_Update "C"
+
+%function UpdateForTID(block, system, tid) Output
+%if tid == 0
+%assign ::GlobalCurrentTID = 0
+%assign ::GlobalCurrentTID = []
+%endif
+%if tid == 2
+%assign ::GlobalCurrentTID = 2
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+/* {S!d1272}Update for S-Function (sdspsreg2): '<Root>/Delay Line10' */
+DC_motor_MPC_DW.DelayLine10_Buff[DC_motor_MPC_DW.DelayLine10_BUFF_OFFSET] = DC_motor_MPC_B.ZeroOrderHold5[0];
+DC_motor_MPC_DW.DelayLine10_BUFF_OFFSET++;
+while (DC_motor_MPC_DW.DelayLine10_BUFF_OFFSET >= 21) {
+    DC_motor_MPC_DW.DelayLine10_BUFF_OFFSET -= 21;
+}
+/* {E!d1272}End of Update for S-Function (sdspsreg2): '<Root>/Delay Line10' */
+
+/* {S!d1274}Update for S-Function (sdspsreg2): '<Root>/Delay Line11' */
+DC_motor_MPC_DW.DelayLine11_Buff[DC_motor_MPC_DW.DelayLine11_BUFF_OFFSET] = DC_motor_MPC_B.ZeroOrderHold5[1];
+DC_motor_MPC_DW.DelayLine11_BUFF_OFFSET++;
+while (DC_motor_MPC_DW.DelayLine11_BUFF_OFFSET >= 21) {
+    DC_motor_MPC_DW.DelayLine11_BUFF_OFFSET -= 21;
+}
+/* {E!d1274}End of Update for S-Function (sdspsreg2): '<Root>/Delay Line11' */
+%closefile cfgTxt
+%<cfgTxt>
+%assign ::GlobalCurrentTID = []
+%endif
+%endfunction
+%function UpdateFcnProtoTypeForTID(block, system, tid) Output
+%if tid == 0
+%assign ::GlobalCurrentTID = 0
+%assign ::GlobalCurrentTID = []
+%endif
+%if tid == 2
+%assign ::GlobalCurrentTID = 2
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Update1(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 4, fcnProtoType)>
+%assign ::GlobalCurrentTID = []
+%endif
+%endfunction

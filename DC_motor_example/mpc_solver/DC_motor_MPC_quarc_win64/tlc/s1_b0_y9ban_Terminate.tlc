@@ -1,0 +1,27 @@
+%implements s1_b0_y9ban_Terminate "C"
+
+%function Terminate(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcTerminateFcnOfS1B0 = OpaqueTLCBlockFcn("Terminate", 1, 0, 0, 7, 0)
+%assign tlcTerminateFcnOfS1B7 = OpaqueTLCBlockFcn("Terminate", 1, 7, 0, 7, 1)
+%if !WHITE_SPACE(tlcTerminateFcnOfS1B0)
+/* Terminate for S-Function (hil_initialize_block): '<Root>/HIL Initialize4' */
+%<tlcTerminateFcnOfS1B0>\
+%endif
+%if !WHITE_SPACE(tlcTerminateFcnOfS1B7)
+/* Terminate for S-Function (mpc_wrapper): '<Root>/CasADi S-Function2' */
+%<tlcTerminateFcnOfS1B7>\
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function TerminateFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Terminate(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 7, fcnProtoType)>
+%endfunction

@@ -1,0 +1,35 @@
+%implements s1_b0_y9ban_SystemInitialize "C"
+
+%function SystemInitialize(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%<SLibInsertAsyncTaskInitializeCode(system)>
+%<SLibWriteMachineInitialize()>
+/* InitializeConditions for Integrator: '<Root>/Integrator2' */
+DC_motor_MPC_X.Integrator2_CSTATE = DC_motor_MPC_P.Integrator2_IC;
+/* InitializeConditions for TransferFcn: '<Root>/QUBE-Servo Model3' */
+DC_motor_MPC_X.QUBEServoModel3_CSTATE = 0.0;
+/* InitializeConditions for RateTransition generated from: '<Root>/QUBE-Servo Model3' */
+DC_motor_MPC_DW.TmpRTBAtQUBEServoModel3Inport1_ = DC_motor_MPC_P.TmpRTBAtQUBEServoModel3Inport1_;
+/* InitializeConditions for S-Function (sdspsreg2): '<Root>/Delay Line10' */
+DC_motor_MPC_DW.DelayLine10_BUFF_OFFSET = 0;
+memset(&DC_motor_MPC_DW.DelayLine10_Buff[0], 0, 21U * sizeof(real_T));
+/* InitializeConditions for S-Function (sdspsreg2): '<Root>/Delay Line11' */
+memset(&DC_motor_MPC_DW.DelayLine11_Buff[0], 0, 21U * sizeof(real_T));
+DC_motor_MPC_DW.DelayLine11_BUFF_OFFSET = 0;
+/* SystemInitialize for MATLAB Function: '<Root>/MATLAB Function5' */
+DC_motor_MPC_DW.sfEvent = DC_motor_MPC_CALL_EVENT;
+%<SLibInsertInitPeriodicCStatesFcn(system)>
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedSystemInitializeLocalVars", localVarDecl)>
+%endfunction
+%function SystemInitializeFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void SystemInitialize(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 1, fcnProtoType)>
+%endfunction

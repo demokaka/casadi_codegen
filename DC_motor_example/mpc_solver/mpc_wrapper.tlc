@@ -1,0 +1,46 @@
+%%------------------------------------------------------------------------------
+%% Non-inlined TLC for a Level-2 C S-Function
+%% Save as: mpc_wrapper.tlc  (must match your MEX/block name exactly)
+%%------------------------------------------------------------------------------
+
+%implements "mpc_wrapper" "C"
+
+%% Tell Coder this S-Function is non-inlined (i.e., call runtime entry points)
+%function IsNonInlinedSFc(block, system) 
+  %return(1)
+%endfunction
+
+%% Register dialog parameters (safe even if none)
+%function RegBlockParameters(block, system) void
+  %<LibBlockRegPrmList>
+%endfunction
+
+%% Declare DWork vectors in generated code if used (safe even if none)
+%function SetBlockInformation(block, system) void
+  %<LibBlockSetDWork>
+%endfunction
+
+%% Map Simulink phases to S-Function entry points
+%function Start(block, system) void
+  %<LibCallSFcnStart>
+%endfunction
+
+%function Outputs(block, system) void
+  %<LibCallSFcnOutput>
+%endfunction
+
+%function Update(block, system) void
+  %<LibCallSFcnUpdate>
+%endfunction
+
+%function Derivatives(block, system) void
+  %<LibCallSFcnDerivatives>
+%endfunction
+
+%function Terminate(block, system) void
+  %<LibCallSFcnTerminate>
+%endfunction
+
+%% Your mdlRTW is empty; nothing to read, but stub kept for future use
+%function WriteRTWParameters(block, system) void
+%endfunction

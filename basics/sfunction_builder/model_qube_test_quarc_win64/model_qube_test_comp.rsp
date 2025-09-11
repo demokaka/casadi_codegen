@@ -1,0 +1,15 @@
+﻿-IC:\Users\khanh\dev\python\projects\casadi_codegen\basics\sfunction_builder
+-IC:\Users\khanh\dev\python\projects\casadi_codegen\basics\sfunction_builder\model_qube_test_quarc_win64
+-IC:\Users\khanh\dev\matlab\casadi-3.7.1-windows64-matlab2018b\include
+-IC:\Users\khanh\dev\matlab\casadi-3.7.1-windows64-matlab2018b
+-I"C:\Program Files\MATLAB\R2025a\extern\include"
+-I"C:\Program Files\MATLAB\R2025a\simulink\include"
+-I"C:\Program Files\MATLAB\R2025a\rtw\c\src"
+-I"C:\Program Files\MATLAB\R2025a\rtw\c\src\ext_mode\common"
+-I"C:\Program Files\MATLAB\R2025a\toolbox\coder\rtiostream\src"
+-I"C:\Program Files\MATLAB\R2025a\toolbox\coder\rtiostream\src\utils"
+-I"C:\Program Files\Quanser\QUARC\include"
+-I"C:\Program Files\MATLAB\R2025a\toolbox\dsp\dsp\include"
+-I"C:\Program Files\MATLAB\R2025a\toolbox\dsp\dsp\extern\src\export\include\src"
+-I"C:\Program Files\MATLAB\R2025a\toolbox\dsp\dsp\extern\src\export\include"
+-I"C:\Program Files\MATLAB\R2025a\toolbox\shared\dsp\vision\matlab\include"

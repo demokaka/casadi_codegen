@@ -77,3 +77,21 @@ cg.add(F);
 cg.generate();
 fprintf('C code generated \n');
 
+%%
+% mex -IC:\Users\khanh\dev\matlab\casadi-3.7.1-windows64-matlab2018b\include -LC:\Users\khanh\dev\matlab\casadi-3.7.1-windows64-matlab2018b -losqp.lib solver_01_wrapper.c solver_01.c
+
+
+% mex -IC:\Users\khanh\dependencies\osqp\include -IC:\Users\khanh\dependencies\osqp\build\include\public -LC:\Users\khanh\dependencies\osqp\build\out\Debug -losqp.lib solver_01_wrapper.c solver_01.c
+
+libPath = casadi.GlobalOptions.getCasadiPath();
+incPath = casadi.GlobalOptions.getCasadiIncludePath();
+mex('-v',...        % verbose mode
+    ['-I' incPath],...      % includes
+    ['-L' libPath],...      % used lib path
+    ['-losqp'],...           % osqp lib for linking
+    '-lcasadi',...
+    '-Dcasadi_real_min',...
+    'solver_01_wrapper.c',...
+    ['solver_01.c']...
+    );
+

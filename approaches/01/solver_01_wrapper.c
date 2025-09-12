@@ -4,6 +4,20 @@
 #include "simstruc.h"
 #include "solver_01.h"
 
+/*
+ * Include Files
+ *
+ */
+#if defined(MATLAB_MEX_FILE)
+#include "tmwtypes.h"
+#include "simstruc_types.h"
+#else
+#define SIMPLIFIED_RTWTYPES_COMPATIBILITY
+#include "rtwtypes.h"
+#undef SIMPLIFIED_RTWTYPES_COMPATIBILITY
+#endif
+
+
 static void mdlInitializeSizes(SimStruct *S)
 {
     ssSetNumSFcnParams(S, 0);
@@ -46,18 +60,28 @@ static void mdlInitializeSizes(SimStruct *S)
     /* specify the sim state compliance to be same as a built-in block */
     ssSetSimStateCompliance(S, USE_DEFAULT_SIM_STATE);
 
-    ssSetOptions(S,
-                 SS_OPTION_WORKS_WITH_CODE_REUSE |
-                 SS_OPTION_EXCEPTION_FREE_CODE |
-                 SS_OPTION_USE_TLC_WITH_ACCELERATOR);
+    // ssSetOptions(S,
+    //              SS_OPTION_WORKS_WITH_CODE_REUSE |
+    //              SS_OPTION_EXCEPTION_FREE_CODE |
+    //              SS_OPTION_USE_TLC_WITH_ACCELERATOR);
 
     /* Signal that we want to use the CasADi Function */
     solver_01_incref();
 }
 
 static void mdlStart(SimStruct *S) {
+  #if defined(MATLAB_MEX_FILE)
   slDataTypeAccess *dta = ssGetDataTypeAccess(S);
   DTypeId solver_stats_bus_id = ssGetDataTypeId(S, "solver_stats_bus");
+  
+  (void)dta; (void)solver_stats_bus_id; // avoid warning unused
+  // #else
+  // UNUSED_ARG(S);
+  #else
+  printf("[mdlStart] begin\n"); fflush(stdout);
+  // allocate, create solver, etc.
+  printf("[mdlStart] after solver create\n"); fflush(stdout);
+  #endif
 }
 
 

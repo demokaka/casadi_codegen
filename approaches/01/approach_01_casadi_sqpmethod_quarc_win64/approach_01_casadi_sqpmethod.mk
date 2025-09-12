@@ -2,7 +2,7 @@
 ## Makefile generated for component 'approach_01_casadi_sqpmethod'. 
 ## 
 ## Makefile     : approach_01_casadi_sqpmethod.mk
-## Generated on : Thu Sep 11 20:09:54 2025
+## Generated on : Fri Sep 12 15:24:10 2025
 ## Final product: $(RELATIVE_PATH_TO_ANCHOR)\approach_01_casadi_sqpmethod.rt-win64
 ## Product type : executable
 ## 
@@ -220,7 +220,7 @@ PREBUILT_OBJS =
 ## LIBRARIES
 ###########################################################################
 
-LIBS = C:\PROGRA~1\Quanser\QUARC\lib\win64\hil.lib C:\PROGRA~1\Quanser\QUARC\lib\win64\QUANSE~2.LIB C:\PROGRA~1\Quanser\QUARC\lib\win64\QUANSE~1.LIB
+LIBS = C:\Users\khanh\dev\matlab\casadi-3.7.1-windows64-matlab2018b\osqp.lib C:\PROGRA~1\Quanser\QUARC\lib\win64\hil.lib C:\PROGRA~1\Quanser\QUARC\lib\win64\QUANSE~2.LIB C:\PROGRA~1\Quanser\QUARC\lib\win64\QUANSE~1.LIB
 
 ###########################################################################
 ## SYSTEM LIBRARIES

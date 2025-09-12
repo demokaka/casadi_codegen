@@ -7,9 +7,9 @@
  *
  * Code generation for model "approach_01_casadi_sqpmethod".
  *
- * Model version              : 1.1
+ * Model version              : 1.3
  * Simulink Coder version : 25.1 (R2025a) 21-Nov-2024
- * C source code generated on : Thu Sep 11 20:09:51 2025
+ * C source code generated on : Fri Sep 12 15:24:07 2025
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping

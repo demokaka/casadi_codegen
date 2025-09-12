@@ -7,9 +7,9 @@
  *
  * Code generation for model "approach_01_casadi_sqpmethod".
  *
- * Model version              : 1.1
+ * Model version              : 1.3
  * Simulink Coder version : 25.1 (R2025a) 21-Nov-2024
- * C source code generated on : Thu Sep 11 20:09:51 2025
+ * C source code generated on : Fri Sep 12 15:24:07 2025
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -487,10 +487,10 @@ RT_MODEL_approach_01_casadi_sqpmethod_T *approach_01_casadi_sqpmethod(void)
   approach_01_casadi_sqpmethod_M->Timing.stepSize0 = 0.002;
 
   /* External mode info */
-  approach_01_casadi_sqpmethod_M->Sizes.checksums[0] = (1106640545U);
-  approach_01_casadi_sqpmethod_M->Sizes.checksums[1] = (752356232U);
-  approach_01_casadi_sqpmethod_M->Sizes.checksums[2] = (3181590408U);
-  approach_01_casadi_sqpmethod_M->Sizes.checksums[3] = (3238043426U);
+  approach_01_casadi_sqpmethod_M->Sizes.checksums[0] = (2937359379U);
+  approach_01_casadi_sqpmethod_M->Sizes.checksums[1] = (3336596272U);
+  approach_01_casadi_sqpmethod_M->Sizes.checksums[2] = (2388405439U);
+  approach_01_casadi_sqpmethod_M->Sizes.checksums[3] = (2569398578U);
 
   {
     static const sysRanDType rtAlwaysEnabled = SUBSYS_RAN_BC_ENABLE;
